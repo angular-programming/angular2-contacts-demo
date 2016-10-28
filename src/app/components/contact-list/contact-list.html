@@ -1,0 +1,8 @@
+<h3>所有联系人<i (click)="addContact()"></i></h3>
+<ul class="list">
+  <li *ngFor="let contact of contacts">
+    <list-li [contact]="contact" (routerNavigate)="routerNavigate($event)"></list-li>
+  </li>
+</ul>
+<!-- <my-footer [path]="path" (writeTitle)="writeTitle($event)"></my-footer> -->
+<my-footer></my-footer>

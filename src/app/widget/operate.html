@@ -1,0 +1,56 @@
+<h3 class="new-contact">{{operateTitle}}</h3>
+<div class="operate">
+  <form #contactForm="ngForm" (ngSubmit)="submitForm()">
+    <ul>
+      <li>
+        <label>姓名：</label>
+        <p>
+          <input type="text" value="{{contact.name}}"
+          [(ngModel)]="contact.name" name="name"
+           (blur)="onBlurName()">
+          <i *ngIf="nameTip" [ngClass]="{green: isName, red: !isName}"></i>
+        </p>
+      </li>
+      <li>
+        <label>电话：</label>
+        <p>
+          <input type="text" value="{{contact.telNum}}"
+          [(ngModel)]="contact.telNum" name="telNum"
+          (blur)="onBlurPhone()">
+          <i *ngIf="phoneTip" [ngClass]="{green: isPhoneNum, red: !isPhoneNum}"></i>
+        </p>
+      </li>
+      <li>
+        <label>住址：</label>
+        <p>
+          <input type="text" value="{{contact.address}}"
+          [(ngModel)]="contact.address" name="address"
+          (blur)="onBlurAddr()">
+          <i *ngIf="addrTip" [ngClass]="{green: isAddr, red: !isAddr}"></i>
+        </p>
+      </li>
+      <li>
+        <label>邮箱：</label>
+        <p>
+          <input type="text" value="{{contact.email}}"
+          [(ngModel)]="contact.email" name="email"
+          (blur)="onBlurEmail()">
+          <i *ngIf="emailTie" [ngClass]="{green: isEmail, red: !isEmail}"></i>
+        </p>
+      </li>
+      <li>
+        <label>生日：</label>
+        <p>
+          <input type="text" value="{{contact.birthday}}"
+          [(ngModel)]="contact.birthday" name="birthday"
+          (blur)="onBlurBir()"  placeholder="日期格式如:1990/10/12">
+          <i *ngIf="birTip" [ngClass]="{green: isBir, red: !isBir}"></i>
+        </p>
+      </li>
+    </ul>
+    <div class="btn">
+      <button type="submit" class="fl">保存</button>
+      <button (click)="cancleOperate()" class=" fr">取消</button>
+    </div>
+  </form>
+</div>

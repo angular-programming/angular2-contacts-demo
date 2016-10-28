@@ -1,0 +1,35 @@
+<div class="detail-contain">
+  <div class="header-detail">
+    <a [routerLink]=" ['']" class="back-to-list">
+      <i class="icon-back"></i>
+      所有联系人
+    </a>
+    <a class="edit" (click)="editContact()">编辑</a>
+    <div class="name-and-icon">
+      <img src="./images/Iverson.jpg">
+      <span class="contact-name">
+        {{ detail.name }}
+        <i [ngClass]="{collect: detail.collection == 0, collected: detail.collection == 1}" (click)="collectTheContact()"></i>
+      </span>
+    </div>
+  </div>
+  <ul class="detail-info">
+    <li>
+      <p>手机号码：</p>
+      <p>{{ detail.telNum }}</p>
+    </li>
+    <li>
+      <p>邮箱：</p>
+      <p>{{ detail.email }}</p>
+    </li>
+    <li>
+      <p>生日：</p>
+      <p>{{ detail.birthday | dateReform:'yyyy-MM-dd'}}</p>
+    </li>
+    <li>
+      <p>住址：</p>
+      <p>{{ detail.address }}</p>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

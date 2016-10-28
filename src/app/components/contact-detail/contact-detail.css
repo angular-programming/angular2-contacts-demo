@@ -1,0 +1,82 @@
+.detail-contain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+}
+.header-detail{
+    background-color: #3DD689;
+}
+.header-detail .back-to-list{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    padding-left: 40px;
+    text-decoration: none;
+    position: relative;
+}
+.back-to-list .icon-back{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background: url("./images/back.png") no-repeat;
+    background-size: cover;
+    transform: translateY(-50%);
+}
+.header-detail .edit{
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    padding-right: 15px;
+}
+.header-detail .name-and-icon img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.header-detail .name-and-icon .contact-name{
+    display: block;
+    line-height: 35px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+.header-detail .name-and-icon .contact-name i{
+  position: absolute;
+  top: 2px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+}
+.header-detail .name-and-icon .contact-name i.collect{
+    background: url("./images/collect.png") no-repeat;
+    background-size: cover;
+}
+.header-detail .name-and-icon .contact-name i.collected{
+  background: url("./images/collected.png") no-repeat;
+  background-size: cover;
+}
+.detail-info{
+    padding: 15px 15px 0;
+}
+.detail-info li{
+    width: 100%;
+    min-height: 60px;
+    padding-top: 5px;
+    border-bottom: 1px solid #eaeaea;
+}
+.detail-info li p{
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 5px;
+}
