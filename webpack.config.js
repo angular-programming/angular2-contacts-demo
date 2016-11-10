@@ -1,17 +1,27 @@
 var webpack = require('webpack');
 var path = require('path');
 
+var basePath = path.join(__dirname, 'src');
+
 // Webpack Config
 var webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor':    './src/vendor.ts',
-    'app':       './src/app.ts',
+    'app':       './src/main.ts',
   },
 
   output: {
     path: './dist',
     filename: '[name].bundle.js'
+  },
+
+  resolve: {
+    extensions: ['', '.ts', '.js'],
+    alias: {
+      app: basePath + '/app',
+      shared: basePath + '/app/shared'
+    }
   },
 
   plugins: [

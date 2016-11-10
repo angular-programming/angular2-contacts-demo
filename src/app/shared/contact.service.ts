@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 
-const contact_url = `./app/services/contacts.json`;
+const contact_url = `./app/contacts.json`;
 
 @Injectable()
 export class ContactService {

@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Footer} from '../../widget/footer';
-import {ContactService} from '../../services/contact-service';
+import {ContactService} from 'shared/contact.service';
 
 @Component({
   selector: 'call-record',
-  templateUrl: 'app/components/collection/collection.html',
-  styleUrls: ['app/components/collection/collection.css']
+  templateUrl: 'app/collection/collection.component.html',
+  styleUrls: ['app/collection/collection.component.css']
 })
-export class Collection implements OnInit {
+export class CollectionComponent implements OnInit {
   collections:any = [];
   contacts:any = {};
 

@@ -3,10 +3,10 @@ import {Location} from '@angular/common';
 
 @Component({
   selector: 'my-footer',
-  templateUrl: 'app/widget/footer.html',
-  styleUrls: ['app/widget/footer.css']
+  templateUrl: 'app/shared/footer.component.html',
+  styleUrls: ['app/shared/footer.component.css']
 })
-export class Footer implements OnInit {
+export class FooterComponent implements OnInit {
   private footer:boolean = true;
 
   constructor(

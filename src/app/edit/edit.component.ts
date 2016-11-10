@@ -1,16 +1,16 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {ContactService} from '../services/contact-service';
-import * as UT from '../utils/utils';
+import {ContactService} from 'shared/contact.service';
+import {UtilService} from 'shared/util.service';
 
 @Component({
   selector: 'my-operate',
-  templateUrl: 'app/widget/operate.html',
-  styleUrls: ['app/widget/operate.css']
+  templateUrl: 'app/edit/edit.component.html',
+  styleUrls: ['app/edit/edit.component.css']
 })
-export class Operate implements OnInit {
-  isAdd: number;
+export class EditComponent implements OnInit {
+  isAdd: boolean;
   operateTitle: string;
   editId: number;
   contacts:any = {};
@@ -31,18 +31,20 @@ export class Operate implements OnInit {
     private _router: Router,
     private _activatedRoute:ActivatedRoute,
     private _constactService: ContactService,
-    private _location:Location
+    private _location:Location,
+    private util: UtilService
     ) {}
 
   ngOnInit() {
     this.getContacts();
     this._activatedRoute.params.subscribe(params => {
-      this.isAdd = params['isAdd'];
+      // this.isAdd = params['isAdd'];
       this.editId = params['id'];
+      this.isAdd = !this.editId;
     })
-    this.operateTitle = this.isAdd == 1 ? '新建联系人' : '编辑联系人';
+    this.operateTitle = this.isAdd ? '新建联系人' : '编辑联系人';
     //
-    if(this.isAdd != 1) this.getContactDetailById(this.editId);
+    if(!this.isAdd) this.getContactDetailById(this.editId);
   }
 
   submitForm() {
@@ -53,7 +55,7 @@ export class Operate implements OnInit {
     this.birTip = true;
 
     if(this.isName && this.isPhoneNum && this.isAddr && this.isEmail && this.isBir){
-      if(this.isAdd == 1) this.addContact();
+      if(this.isAdd) this.addContact();
       else this.editeContact();
     }
   }
@@ -107,7 +109,7 @@ export class Operate implements OnInit {
     this.contacts = JSON.parse(ss_contacts);
     this.contacts.splice(this.editId - 1, 1, edit_contact);
     sessionStorage.setItem("contacts",JSON.stringify(this.contacts));
-    this._router.navigate(['/contact-detail',this.editId]);
+    this._router.navigate(['/list',this.editId]);
   }
 
   cancleOperate() {
@@ -121,7 +123,7 @@ export class Operate implements OnInit {
   }
   onBlurPhone() {
     this.phoneTip = true;
-    this.isPhoneNum = UT.checkPhoneNum(this.contact.telNum);
+    this.isPhoneNum = util.checkPhoneNum(this.contact.telNum);
   }
   onBlurAddr() {
     this.addrTip = true;
@@ -129,7 +131,7 @@ export class Operate implements OnInit {
   }
   onBlurEmail() {
     this.emailTie = true;
-    this.isEmail = UT.checkEmail(this.contact.email);
+    this.isEmail = util.checkEmail(this.contact.email);
   }
   onBlurBir() {
     this.birTip = true;

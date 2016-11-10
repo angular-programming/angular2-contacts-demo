@@ -1,13 +1,13 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {ContactService} from '../../services/contact-service';
+import {ContactService} from 'shared/contact.service';
 
 @Component({
   selector: 'detail',
-  templateUrl: 'app/components/contact-detail/contact-detail.html',
-  styleUrls: ['app/components/contact-detail/contact-detail.css']
+  templateUrl: 'app/detail/detail.component.html',
+  styleUrls: ['app/detail/detail.component.css']
 })
-export class ContactDetail implements OnInit, OnDestroy {
+export class DetailComponent implements OnInit, OnDestroy {
   contact_id: number;
   detail:any = {};
   contacts:any = {};
@@ -33,7 +33,7 @@ export class ContactDetail implements OnInit, OnDestroy {
   }
 
   editContact() {
-    this._router.navigate(['/operate/id',this.contact_id]);
+    this._router.navigate(['/edit',this.contact_id]);
   }
 
   collectTheContact() {

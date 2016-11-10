@@ -3,11 +3,11 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'list-li',
-  templateUrl: 'app/components/contact-list/list-li.html',
-  styleUrls: ['app/components/contact-list/list-li.css']
+  templateUrl: 'app/list/item.component.html',
+  styleUrls: ['app/list/item.component.css']
 })
 
-export class ListChildrenComponent implements OnInit {
+export class ItemComponent implements OnInit {
   @Input() contact:any = {};
   @Output() routerNavigate = new EventEmitter<number>();
 

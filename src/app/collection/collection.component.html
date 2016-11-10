@@ -2,7 +2,7 @@
 <h3 *ngIf="coll_length == 0" class="no-collection">没有收藏</h3>
 <ul class="my-collection">
   <li *ngFor="let collection of collections">
-    <a [routerLink]="['/contact-detail', collection.id]">
+    <a [routerLink]="['/list', collection.id]">
       <label>{{ collection.name }}</label><span>{{ collection.telNum }}</span>
     </a>
   </li>

@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Operate} from '../../widget/operate';
-import {ContactService} from '../../services/contact-service';
+import {ContactService} from 'shared/contact.service';
 
 @Component({
   selector: 'list',
-  templateUrl: 'app/components/contact-list/contact-list.html',
-  styleUrls: ['app/components/contact-list/contact-list.css']
+  templateUrl: 'app/list/list.component.html',
+  styleUrls: ['app/list/list.component.css']
 })
-export class ContactList implements OnInit {
+export class ListComponent implements OnInit {
   contacts: {};
   private isAdd:number = 1;
 
@@ -34,11 +33,11 @@ export class ContactList implements OnInit {
   }
 
   addContact() {
-    this._router.navigate(['/operate/isAdd', this.isAdd]);
+    this._router.navigate(['edit']);
   }
 
   routerNavigate(id: number) {
-    this._router.navigate(['/contact-detail',id]);
+    this._router.navigate(['/list',id]);
   }
 
 }

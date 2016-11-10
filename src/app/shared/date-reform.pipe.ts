@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'dateReform'
 })
-export class DateReform implements PipeTransform {
+export class DateReformPipe implements PipeTransform {
   transform(val:string, format:string):string {
 
     let date = new Date(val);
