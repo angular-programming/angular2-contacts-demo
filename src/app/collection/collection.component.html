@@ -3,7 +3,7 @@
 <ul class="my-collection">
   <li *ngFor="let collection of collections">
     <a [routerLink]="['/list', collection.id]">
-      <label>{{ collection.name }}</label><span>{{ collection.telNum }}</span>
+      <label>{{ collection.name }}</label><span>{{ collection.telNum | phone }}</span>
     </a>
   </li>
 </ul>

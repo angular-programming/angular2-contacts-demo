@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
 import {Http, RequestOptions, Headers} from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
-const contact_url = `./app/contacts.json`;
+const CONTACT_URL = `./app/contacts.json`;
 
 @Injectable()
 export class ContactService {
   constructor(
-    private _http:Http
+    private http:Http
   ) {}
 
   request(url:string, opts:any) {
-    return this._http.request(url, new RequestOptions(opts))
+    return this.http.request(url, new RequestOptions(opts))
     .map(res => {
       let _res = res.json();
       if(opts.id){
@@ -41,33 +41,15 @@ export class ContactService {
   }
 
   getContactsData() {
-    return new Observable(observable => {
-      this.get(contact_url)
-      .subscribe(res => {
-        observable.next(res);
-        observable.complete();
-      })
-    })
+    return this.get(CONTACT_URL);
   }
 
   getContactById(id:number) {
-    return new Observable(observable => {
-      this.get(contact_url, {id:id})
-      .subscribe(res => {
-        observable.next(res);
-        observable.complete();
-      })
-    })
+    return this.get(CONTACT_URL, { id: id })；
   }
 
   getCollections() {
-    return new Observable(observable => {
-      this.get(contact_url, {collection:1})
-      .subscribe(res => {
-        observable.next(res);
-        observable.complete();
-      })
-    })
+    return this.get(CONTACT_URL, { collection: 1 });
   }
 
   addContact(obj:Object = {}) {
@@ -75,7 +57,7 @@ export class ContactService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.post(contact_url, body, options).map(res => res.json());
+    return this.http.post(CONTACT_URL, body, options).map(res => res.json());
   }
 
 }

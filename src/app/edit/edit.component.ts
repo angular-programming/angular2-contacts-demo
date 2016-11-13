@@ -123,7 +123,7 @@ export class EditComponent implements OnInit {
   }
   onBlurPhone() {
     this.phoneTip = true;
-    this.isPhoneNum = util.checkPhoneNum(this.contact.telNum);
+    this.isPhoneNum = this.util.checkPhoneNum(this.contact.telNum);
   }
   onBlurAddr() {
     this.addrTip = true;
@@ -131,7 +131,7 @@ export class EditComponent implements OnInit {
   }
   onBlurEmail() {
     this.emailTie = true;
-    this.isEmail = util.checkEmail(this.contact.email);
+    this.isEmail = this.util.checkEmail(this.contact.email);
   }
   onBlurBir() {
     this.birTip = true;

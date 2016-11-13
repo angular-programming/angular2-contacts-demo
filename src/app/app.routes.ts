@@ -18,13 +18,7 @@ export const rootRouterConfig: Routes = [
   },
   {
     path: "list/:id",
-    component: DetailComponent,
-    children: [
-      {
-        path: "",
-        component: AnotationComponent
-      }
-    ]
+    component: DetailComponent
   },
   {
     path: "edit",

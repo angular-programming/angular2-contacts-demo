@@ -9,12 +9,12 @@ import {AppComponent} from "./app.component";
 
 import {CollectionComponent} from './collection/collection.component';
 import {ListComponent, ItemComponent} from './list';
-import {DetailComponent, AnotationComponent} from './detail';
+import {DetailComponent} from './detail';
 import {EditComponent} from './edit/edit.component';
 
 import {ContactService} from "./shared/contact.service";
 import {FooterComponent} from './shared/footer.component';
-import {DateReformPipe} from './shared/date-reform.pipe';
+import {PhonePipe} from './shared/phone.pipe';
 import {BtnClickDirective} from './shared/btn-click.directive';
 import {UtilService} from './shared/util.service';
 
@@ -24,12 +24,11 @@ import {UtilService} from './shared/util.service';
     AppComponent,
     ListComponent,
     DetailComponent,
-    AnotationComponent,
     CollectionComponent,
     EditComponent,
     FooterComponent,
     ItemComponent,
-    DateReformPipe,
+    PhonePipe,
     BtnClickDirective
   ],
   imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],

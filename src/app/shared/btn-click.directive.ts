@@ -11,7 +11,9 @@ export class BtnClickDirective {
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
   }
-  btnClick() { this._addClasssName("btn-click"); }
+  btnClick() {
+    this._addClasssName("btn-click");
+  }
   private _addClasssName(className: string) {
     this.el.className = this.el.className + " " + className;
   }
