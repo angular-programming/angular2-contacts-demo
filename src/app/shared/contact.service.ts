@@ -45,7 +45,7 @@ export class ContactService {
   }
 
   getContactById(id:number) {
-    return this.get(CONTACT_URL, { id: id })；
+    return this.get(CONTACT_URL, { id: id });
   }
 
   getCollections() {

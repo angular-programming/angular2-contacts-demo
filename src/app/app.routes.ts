@@ -1,9 +1,9 @@
 import {Routes} from "@angular/router";
 
-import {CollectionComponent} from './collection/collection.component';
-import {ListComponent, ItemComponent} from './list';
-import {DetailComponent, AnotationComponent} from './detail';
-import {EditComponent} from './edit/edit.component';
+import {CollectionComponent} from './collection';
+import {ListComponent} from './list';
+import {DetailComponent} from './detail';
+import {EditComponent} from './edit';
 
 
 export const rootRouterConfig: Routes = [

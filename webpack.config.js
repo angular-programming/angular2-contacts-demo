@@ -31,7 +31,7 @@ var webpackConfig = {
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      { test: /\.ts$/, loader: 'ts-loader' },
 
     ]
   }

@@ -7,27 +7,23 @@ import {HttpModule} from "@angular/http";
 import {rootRouterConfig} from "./app.routes";
 import {AppComponent} from "./app.component";
 
-import {CollectionComponent} from './collection/collection.component';
-import {ListComponent, ItemComponent} from './list';
+import {CollectionComponent} from './collection';
+import {ListComponent, ListItemComponent} from './list';
 import {DetailComponent} from './detail';
-import {EditComponent} from './edit/edit.component';
+import {EditComponent} from './edit';
 
-import {ContactService} from "./shared/contact.service";
-import {FooterComponent} from './shared/footer.component';
-import {PhonePipe} from './shared/phone.pipe';
-import {BtnClickDirective} from './shared/btn-click.directive';
-import {UtilService} from './shared/util.service';
+import {ContactService, UtilService, FooterComponent, 
+  HeaderComponent, PhonePipe, BtnClickDirective} from "./shared";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
+    ListComponent, ListItemComponent,
     DetailComponent,
     CollectionComponent,
     EditComponent,
-    FooterComponent,
-    ItemComponent,
+    HeaderComponent, FooterComponent,
     PhonePipe,
     BtnClickDirective
   ],
