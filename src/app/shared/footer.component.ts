@@ -7,13 +7,13 @@ import {Location} from '@angular/common';
   styleUrls: ['app/shared/footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  private footer:boolean = true;
+  private isListPage:boolean = true;
 
   constructor(
     private _location:Location
   ) {}
 
   ngOnInit() {
-    this._location.path() == '' || this._location.path().indexOf('/contact-list') > -1  ? this.footer = true : this.footer = false;
+    this.isListPage = this._location.path() == '' || this._location.path().indexOf('/list') > -1 
   }
 }

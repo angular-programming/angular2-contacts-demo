@@ -1,8 +1,8 @@
 <nav>
-  <a [routerLink]=" ['/collection'] " [ngClass]="{clickOn: !footer}">
+  <a [routerLink]=" ['/collection'] " [ngClass]="{clickOn: !isListPage}">
     <i>收藏</i>
   </a>
-  <a [routerLink]=" ['/list']" [ngClass]="{clickOn: footer}" btnClickStyle>
+  <a [routerLink]=" ['/list']" [ngClass]="{clickOn: isListPage}">
     <em></em>
     <i>通讯录</i>
   </a>

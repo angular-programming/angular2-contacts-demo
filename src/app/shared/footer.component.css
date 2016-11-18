@@ -44,7 +44,7 @@ nav em {
   margin-top: -5px;
   opacity: 0;
 }
-nav a.btn-click em{
+/*nav a.btn-click em{
   -webkit-animation: scale_zoom 1s both infinite;
 }
 
@@ -60,4 +60,4 @@ nav a.btn-click em{
     100%{
       opacity: 0;
     }
-}
+}*/
