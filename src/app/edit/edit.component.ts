@@ -56,7 +56,7 @@ export class EditComponent implements OnInit {
 
     if(this.isName && this.isPhoneNum && this.isAddr && this.isEmail && this.isBir){
       if(this.isAdd) this.addContact();
-      else this.editeContact();
+      else this.editContact();
     }
   }
   getContacts() {
@@ -95,7 +95,7 @@ export class EditComponent implements OnInit {
     this._router.navigate(['']);
   }
 
-  editeContact() {
+  editContact() {
     let edit_contact = {
       "id": this.editId,
       "name": this.contact.name,
