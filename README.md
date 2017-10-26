@@ -1,3 +1,7 @@
+### 注意：新版本（Angular 4 + Angular CLI）已迁移至新repo
+
+https://github.com/angular-programming/angular-contacts-demo
+
 ### Usage
 - Clone or fork this repository
 - Make sure you have [node.js](https://nodejs.org/) installed（>= 6.0）
